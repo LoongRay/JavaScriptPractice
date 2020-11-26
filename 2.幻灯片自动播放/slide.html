@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Slide</title>
+	<link rel="stylesheet" href="slide.css">
+</head>
+<body>
+	<div class="slide-wraper">
+		<div class="slide1 slide-item fade">
+			<div class="item-index">1/3</div>
+			<img src="img/1.jpg" alt="">
+			<p class="item-text">JapanScene</p>
+		</div>
+		<div class="slide2 slide-item fade">
+			<div class="item-index">2/3</div>
+			<img src="img/2.jpg" alt="">
+			<p class="item-text">CountryRoad</p>
+		</div>
+		<div class="slide3 slide-item fade">
+			<div class="item-index">3/3</div>
+			<img src="img/3.jpg" alt="">
+			<p class="item-text">BlueSea</p>
+		</div>
+		<!--此处a标签不做跳转页面功能,省去href,否则会影响JS代码中翻转幻灯片的效果-->
+		<a class="switch-item" id="prev">〈</a>
+		<a class="switch-item" id="next">〉</a>
+
+	</div>
+	<div class="slide-controls">
+			<span class="contrl-node" ></span>
+			<span class="contrl-node" ></span>
+			<span class="contrl-node" ></span>
+	</div>
+	<script type="text/javascript" src="slide.js"></script>
+</body>
+</html>

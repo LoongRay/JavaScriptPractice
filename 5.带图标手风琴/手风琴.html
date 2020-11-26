@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手风琴</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		.btn {
+			width: 100%;
+			height: 60px;
+			background-color: #c5c5c5;
+			border: none;
+			text-align: left;
+			position: relative;
+		}
+
+		.btn .fa {
+			position: absolute;
+			right: 50px;
+		}
+
+		.btn:hover {
+			background-color: #687578;
+		}
+
+		.pannel {
+			padding: 50px 50px;
+			display: none;
+		}
+
+		.active {
+			background-color: #687578;
+		}
+
+		.show {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+<h1>手风琴效果</h1>
+<button class="btn">选项1<span class="fa fa-plus-square-o"></span></button>
+<div class="pannel">
+	<p>1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+		eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+		enim ad minim veniam, quis nostrud exercitation ullamco laboris
+		nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<button class="btn">选项2<span class="fa fa-plus-square-o"></span></button>
+<div class="pannel">
+	<p>2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+		eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+		enim ad minim veniam, quis nostrud exercitation ullamco laboris
+		nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<button class="btn">选项3<span class="fa fa-plus-square-o"></span></button>
+<div class="pannel">
+	<p>3 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+		eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+		enim ad minim veniam, quis nostrud exercitation ullamco laboris
+		nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<script type="text/javascript">
+	// var btn = document.getElementsByClassName("btn");
+	// var i;
+	//
+	// for (i = 0; i < btn.length; i++) {
+	// 	btn[i].onclick = function() {
+	// 		this.classList.toggle("active");
+	// 		var panel = this.nextElementSibling;
+	// 		panel.classList.toggle('show');
+	// 		if(this.classList.contains("active")){
+	// 			this.childNodes[1].classList.remove('fa-plus-square-o');
+	// 			this.childNodes[1].classList.add('fa-minus-square-o');
+	// 		}
+	// 		debugger;
+	// 		if (!this.classList.contains("active")) {
+	// 			this.childNodes[1].classList.remove('fa-minus-square-o');
+	// 			this.childNodes[1].classList.add('fa-plus-square-o');
+	// 		}
+	//
+	// 	}
+	// }
+
+
+	var btn = document.getElementsByClassName('btn'),
+		pannel = document.getElementsByClassName('pannel'),
+		btn_icon = document.getElementsByClassName('fa');
+	// console.log(btn_icon);
+	// console.log(btn_icon[0].classList);
+	for (var i=0;i<btn.length;i++){
+		//此处i值已经经历过三次循环,值为3,所以后面选择元素要用this,以及通过this操作相关dom节点
+		console.log(i);
+		console.log(btn[i]);
+		btn[i].onclick = function () {
+			console.log(btn[i]);
+			debugger;
+			console.log(this.nextElementSibling);
+
+			//错误 this.nextElementSibling.style.display.value的数据类型为undefined ,bool类型为false
+			//'none'数据类型为字符串,bool类型为true
+			//修改判断条件为 !(this.classList.contains("active"))
+			//错误代码:
+			// if (this.nextElementSibling.style.display.value == 'none')
+			if(!(this.classList.contains("active"))){
+				console.log(this.classList);
+				this.classList.add('active');
+				this.childNodes[1].classList.remove('fa-plus-square-o');
+				this.childNodes[1].classList.add('fa-minus-square-o');
+				this.nextElementSibling.style.display = 'block';
+
+			}
+
+			else{
+				this.classList.remove('active');
+				this.childNodes[1].classList.remove('fa-minus-square-o');
+				this.childNodes[1].classList.add('fa-plus-square-o');
+				this.nextElementSibling.style.display = 'none';
+			}
+
+		}
+	}
+
+</script>
+</body>
+</html>

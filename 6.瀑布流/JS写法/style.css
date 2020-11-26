@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#main{
+    position: relative;
+}
+
+#main .box{
+    /*使用padding作为图片内容之间的间隔距离,是为了JS获取内容高度*/
+    padding: 15px 0 0 15px;
+    float: left;
+}
+
+#main .box .pic{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /*0 0 指垂直水平方向扩散距离, 5px指模糊程度*/
+    box-shadow: 0 0 5px #ccc;
+}
+
+#main .box .pic img{
+    width: 165px;
+    height: auto;
+}

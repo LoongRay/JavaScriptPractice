@@ -1,0 +1,150 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/*预览图片列表样式*/
+
+.title{
+    text-align: center;
+}
+
+.preview{
+    width: 80%;
+    height: 180px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+.preview .preview-column{
+    width: 20%;
+    height: 100%;
+}
+
+.preview .preview-column img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.preview .preview-column img:hover{
+    -webkit-box-shadow:  0 5px 5px 0 #636363;
+    -moz-box-shadow:  0 5px 5px 0 #636363;
+    box-shadow:  0 5px 5px 0 #636363;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+/*.preview-model{*/
+    /*display: none;*/
+/*}*/
+
+/*相册预览详情*/
+#lightbox-model{
+    display: none;
+}
+
+#lightbox-model{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #184063;
+}
+
+/*关闭lightbox*/
+.lightbox-close{
+    position: absolute;
+    color: #fff;
+    font-size: 30px;
+    right: 20px;
+    top: 20px;
+}
+
+/*lightBox首部内容*/
+.header-list{
+    width: 80%;
+    height: 60%;
+    overflow: hidden;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+.header-list .header-item{
+    height: 100%;
+    width: 70%;
+    margin: 30px auto;
+    position: relative;
+}
+
+.header-list .prev,
+.header-list .next{
+    position: absolute;
+    display: inline-block;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+.header-list .prev{
+    left: 16%;
+    top: 48%;
+    margin-top: -15px;
+}
+.header-list .next{
+    right: 16%;
+    top: 48%;
+    margin-top: -15px;
+}
+
+.header-list .header-item img{
+    width: 100%;
+    height: 80%;
+}
+
+.header-list .header-item .header-index{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    color: #fff;
+    font-size: 30px;
+}
+
+.header-list .header-item .header-title{
+    font-size: 30px;
+    color: #fff;
+    font-weight: bolder;
+}
+
+/*lightbox底部内容*/
+.footer-list{
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    height: 24%;
+    align-items: center;
+    justify-content: center;
+}
+.footer-list .footer-item{
+    flex: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.footer-list .footer-item:hover{
+    cursor: pointer;
+    opacity: 1;
+    border: 1px solid #fff;
+}
+
+.footer-list .footer-item img{
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+
+/*幻灯片激活样式*/
+.footer-list .footer-item.active{
+    opacity: 1;
+    border: 1px solid #fff;
+}
+

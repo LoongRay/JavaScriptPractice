@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>alertItem</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			width: 100%;
+			height: 100%;
+		}
+		.wraper{
+
+			/*设置行内元素#tipBtn水平居中:块级父元素div设置text-align: center;*/
+			text-align: center;
+		}
+		.wraper .cover{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,0.5);
+			z-index: 99;
+			display: none;
+		}
+		.wraper #tipBtn{
+			z-index: 9;
+		}
+		.tipsAlert{
+			position: absolute;
+			width: 400px;
+			height: 180px;
+			top: 200px;
+			left: 50%;
+			margin-left: -200px;
+			background-color: #fff;
+			z-index: 999;
+			text-align: center;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="wraper">
+		<div class="cover"></div>
+		<button id="tipBtn">打开弹窗</button>
+	</div>
+	<div class="tipsAlert">
+		<p style="line-height: 180px;position: relative;">弹窗中的文本</p>
+		<p id="closeBtn" style="position:absolute;top: 0;right:10px;width: 30px;height: 30px;">x</p>
+	</div>
+	<script>
+		var closeBtn = document.getElementById('closeBtn'),
+			tipBtn = document.getElementById('tipBtn'),
+			cover = document.getElementsByClassName('cover')[0],
+			tipsAlert = document.getElementsByClassName('tipsAlert')[0];
+		//开启弹窗
+		tipBtn.onclick = function () {
+			tipsAlert.style.display = 'block';
+			cover.style.display = 'block';
+		}
+		//关闭弹框
+		function closeWindow() {
+			tipsAlert.style.display = 'none';
+			cover.style.display = 'none';
+		}
+		//通过事件调用已定义函数,函数名称后不需要添加括号,否则无法调用.
+		// 错误写法closeBtn.onclick = closeWindow();
+		closeBtn.onclick = closeWindow;//点击关闭按钮关闭
+		cover.onclick = closeWindow;//点击遮罩层关闭
+	</script>
+</body>
+</html>

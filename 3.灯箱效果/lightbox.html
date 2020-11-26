@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lightBox</title>
+	<link rel="stylesheet" href="lightbox.css" type="text/css">
+</head>
+<body>
+	<div class="preview-model">
+		<h1 class="title">LightBox</h1>
+		<div class="preview">
+			<div class="preview-column" onclick="openLightbox();currentSlides(1)">
+				<img src="galaxy.jpg" alt="" id="column1">
+			</div>
+			<div class="preview-column" onclick="openLightbox();currentSlides(2)">
+				<img src="lostspace.jpg" alt="" id="column2">
+			</div>
+			<div class="preview-column" onclick="openLightbox();currentSlides(3)">
+				<img src="spaceman.jpg" alt="" id="column3">
+			</div>
+			<div class="preview-column" onclick="openLightbox();currentSlides(4)">
+				<img src="starsky.jpg" alt="" id="column4">
+			</div>
+		</div>
+	</div>
+	<div id="lightbox-model">
+		<div class="lightbox-close" onclick="closeLightbox()">X</div>
+		<div class="header-list">
+			<div class="header-item">
+				<p class="header-index">1/4</p>
+				<img src="galaxy.jpg" >
+				<p class="header-title">Galaxy</p>
+			</div>
+			<div class="header-item">
+				<p class="header-index">2/4</p>
+				<img src="lostspace.jpg" >
+				<p class="header-title">LostSpace</p>
+			</div>
+			<div class="header-item">
+				<p class="header-index">3/4</p>
+				<img src="spaceman.jpg" >
+				<p class="header-title">SpaceMan</p>
+			</div>
+			<div class="header-item">
+				<p class="header-index">4/4</p>
+				<img src="starsky.jpg" >
+				<p class="header-title">StarsSky</p>
+			</div>
+			<a class="prev" onclick="addSlides(-1)">《</a>
+			<a class="next" onclick="addSlides(1)">》</a>
+		</div>
+		<div class="footer-list">
+			<div class="footer-item" onclick="currentSlides(1)">
+				<img src="galaxy.jpg" alt="">
+			</div>
+			<div class="footer-item" onclick="currentSlides(2)">
+				<img src="lostspace.jpg" alt="">
+			</div>
+			<div class="footer-item" onclick="currentSlides(3)">
+				<img src="spaceman.jpg" alt="">
+			</div>
+			<div class="footer-item" onclick="currentSlides(4)">
+				<img src="starsky.jpg" alt="">
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="lightbox.js"></script>
+</body>
+</html>
